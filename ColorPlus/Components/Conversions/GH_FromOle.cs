@@ -31,7 +31,7 @@ namespace ColorPlus.Components.Conversions
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddIntegerParameter("OLE Integer", "I", "The OLE integer value", GH_ParamAccess.item, 255);
+            pManager.AddIntegerParameter("Integer", "I", "OLE integer", GH_ParamAccess.item, 255);
             pManager[0].Optional = true;
         }
 

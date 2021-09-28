@@ -7,14 +7,19 @@ using Grasshopper.Kernel.Attributes;
 using Grasshopper.Kernel.Types;
 using Rhino.Geometry;
 using System.Windows.Forms;
+using System.Drawing;
+using Grasshopper.Kernel.Parameters;
+using Grasshopper.Kernel.Data;
+using System.Linq;
 
 namespace ColorPlus.Components.Preview
 {
-    public class GH_ColorPreview : GH_Component
+
+    public class GH_ColorPreview : GH_Component, IGH_VariableParameterComponent
     {
         public List<Sd.Color> backgrounds = new List<Sd.Color>();
-        public int Width = 150;
-        public int Height = 27;
+        public int Width = 49;
+        public int Height = 26;
         public bool HasBorder = true;
 
         /// <summary>
@@ -32,14 +37,14 @@ namespace ColorPlus.Components.Preview
         /// </summary>
         public override GH_Exposure Exposure
         {
-            get { return GH_Exposure.quarternary | GH_Exposure.obscure; }
+            get { return GH_Exposure.hidden; }
         }
 
         public override void CreateAttributes()
         {
             backgrounds = new List<Sd.Color>();
-            Width = 150;
-            Height = 27;
+            Width = 49;
+            Height = 26;
             m_attributes = new ColorsAttributes_Custom(this);
         }
 
@@ -48,16 +53,17 @@ namespace ColorPlus.Components.Preview
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddColourParameter("Colors", " ", "The colors to preview", GH_ParamAccess.list);
+            pManager.AddColourParameter("Colors", " ", "Input Colors", GH_ParamAccess.list);
             pManager[0].Optional = true;
         }
+        public bool CanInsertParameter(GH_ParameterSide side, int index) { return false; }
+        public bool CanRemoveParameter(GH_ParameterSide side, int index) { return false; }
 
         /// <summary>
         /// Registers all the output parameters for this component.
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            //pManager.AddColourParameter("Colors", " ", "The colors", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -68,8 +74,64 @@ namespace ColorPlus.Components.Preview
         {
             List<Sd.Color> colors = new List<Sd.Color>();
             DA.GetDataList(0, colors);
-
+            if (colors.Count == 0) colors.Add(Color.Transparent);
             backgrounds = colors;
+        }
+        protected override void AfterSolveInstance()
+        {
+            //VariableParameterMaintenance();
+            //Params.OnParametersChanged();
+        }
+
+        private void ClearOutputs()
+        {
+            int currentCount = Params.Output.Count;
+            int newCount = backgrounds.Count;
+
+            for (int i = 0; i < (currentCount - newCount); i++)
+            {
+                int index = currentCount - i - 1;
+                List<IGH_Param> rec = Params.Output[index].Recipients.ToList();
+                Params.Output[index].Recipients.Clear();
+                Params.Output[index].ClearData();
+                DestroyParameter(GH_ParameterSide.Output, index);
+                Params.UnregisterOutputParameter(Params.Output[index]);
+                for (int j =0;j<rec.Count;j++)
+                {
+                    rec[rec.Count-1-j].RemoveSource(Params.Output[index]);
+                }
+            }
+
+        }
+
+        private void AddColorParameters()
+        {
+            int currentCount = Params.Output.Count;
+            int newCount = backgrounds.Count;
+
+            for (int i = currentCount; i < newCount; i++)
+            {
+                Params.RegisterOutputParam(CreateParameter(GH_ParameterSide.Output, i));
+            }
+
+        }
+
+        private void SetParamProperties()
+        {
+            if (backgrounds.Count > 0)
+            {
+                int currentCount = backgrounds.Count;
+                GH_Path path = Params.Input[0].VolatileData.Paths[Params.Input[0].VolatileData.LongestPathIndex()];
+                for (int i = 0; i < currentCount; i++)
+                {
+                    Color color = backgrounds[i];
+                    Params.Output[i].Name = ColorTranslator.ToHtml(color);
+                    Params.Output[i].NickName = " ";
+                    Params.Output[i].Description = i + " | " + color.ToString();
+                    Params.Output[i].Access = GH_ParamAccess.item;
+                    Params.Output[i].AddVolatileData(path,0, color);
+                }
+            }
         }
 
         public override void AppendAdditionalMenuItems(ToolStripDropDown menu)
@@ -99,25 +161,6 @@ namespace ColorPlus.Components.Preview
 
             Menu_AppendCustomItem(menu, menuItemA);
 
-            //Width Number Picker
-            var labelB = new Label { Text = "Height" };
-            labelB.Margin = new Padding(0, 5, 0, 0);
-
-            var numCtrlB = new NumericUpDown();
-            numCtrlB.Width = 50;
-            numCtrlB.Minimum = 27;
-            numCtrlB.Maximum = 500;
-            numCtrlB.Value = (Decimal)Height;
-            numCtrlB.ValueChanged -= (o, e) => { SetHeightOffset((int)numCtrlB.Value); };
-            numCtrlB.ValueChanged += (o, e) => { SetHeightOffset((int)numCtrlB.Value); };
-
-            FlowLayoutPanel menuItemB = new FlowLayoutPanel();
-            menuItemB.FlowDirection = FlowDirection.LeftToRight;
-            menuItemB.Height = 30;
-            menuItemB.Controls.Add(numCtrlB);
-            menuItemB.Controls.Add(labelB);
-
-            Menu_AppendCustomItem(menu, menuItemB);
         }
 
         public void SetBorder(Object sender, EventArgs e)
@@ -132,16 +175,9 @@ namespace ColorPlus.Components.Preview
             this.ExpireSolution(true);
         }
 
-        public void SetHeightOffset(int value)
-        {
-            Height = value;
-            this.ExpireSolution(true);
-        }
-
         public override bool Write(GH_IO.Serialization.GH_IWriter writer)
         {
             writer.SetInt32("Width", Width);
-            writer.SetInt32("Height", Height);
             writer.SetBoolean("Border", HasBorder);
 
             return base.Write(writer);
@@ -149,10 +185,32 @@ namespace ColorPlus.Components.Preview
         public override bool Read(GH_IO.Serialization.GH_IReader reader)
         {
             Width = reader.GetInt32("Width");
-            Height = reader.GetInt32("Height");
             HasBorder = reader.GetBoolean("Border");
 
             return base.Read(reader);
+        }
+
+        public IGH_Param CreateParameter(GH_ParameterSide side, int index)
+        {
+            return new Param_Colour
+            {
+                Access = GH_ParamAccess.item
+            };
+        }
+
+        public bool DestroyParameter(GH_ParameterSide side, int index)
+        {
+            return true;
+        }
+
+        public void VariableParameterMaintenance()
+        {
+            int currentCount = Params.Output.Count;
+            int newCount = backgrounds.Count;
+
+            ClearOutputs();
+            AddColorParameters();
+            SetParamProperties();
         }
 
         /// <summary>
@@ -217,7 +275,7 @@ namespace ColorPlus.Components.Preview
             {
                 GH_Capsule capsule = GH_Capsule.CreateCapsule(ButtonBounds, GH_Palette.Normal, 0, 0);
                 capsule.Render(graphics, Selected, Owner.Locked, true);
-                capsule.AddOutputGrip(this.OutputGrip.Y);
+                capsule.AddOutputGrip(comp.Width + this.OutputGrip.Y);
                 capsule.Dispose();
                 capsule = null;
 
@@ -239,7 +297,7 @@ namespace ColorPlus.Components.Preview
 
                         if (comp.HasBorder)
                         {
-                        graphics.DrawRectangle(new Sd.Pen(Sd.Color.Black, 1), borderRectangle);
+                            graphics.DrawRectangle(new Sd.Pen(Sd.Color.Black, 1), borderRectangle);
                         }
                         else
                         {

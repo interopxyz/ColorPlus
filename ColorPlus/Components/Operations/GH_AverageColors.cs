@@ -31,7 +31,7 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddColourParameter("Colors", "C", "A list of colors", GH_ParamAccess.list);
+            pManager.AddColourParameter("Colors", "C", "Input Colors", GH_ParamAccess.list);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddColourParameter("Averaged Color", "A", "The averaged color", GH_ParamAccess.item);
+            pManager.AddColourParameter("Color", "A", "Resulting color", GH_ParamAccess.item);
         }
 
         /// <summary>

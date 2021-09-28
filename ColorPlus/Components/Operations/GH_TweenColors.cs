@@ -12,7 +12,7 @@ namespace ColorPlus.Components.Operations
         /// Initializes a new instance of the GH_TweenColors class.
         /// </summary>
         public GH_TweenColors()
-          : base("GH_TweenColors", "Nickname",
+          : base(" Tween Colors", "TweenClr",
               "Get a tweened color between a two colors",
               "Display", "Colour")
         {
@@ -31,9 +31,9 @@ namespace ColorPlus.Components.Operations
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddColourParameter("Source", "S", "The source color", GH_ParamAccess.item);
-            pManager.AddColourParameter("Target", "T", "The target color", GH_ParamAccess.item);
-            pManager.AddNumberParameter("Parameter", "P", "The unitized parameter (0-1)", GH_ParamAccess.item, 0.5);
+            pManager.AddColourParameter("Source", "S", "Input source color", GH_ParamAccess.item);
+            pManager.AddColourParameter("Target", "T", "Input target color", GH_ParamAccess.item);
+            pManager.AddNumberParameter("Parameter", "P", "Unitized parameter (0-1)", GH_ParamAccess.item, 0.5);
             pManager[2].Optional = true;
         }
 
@@ -42,7 +42,7 @@ namespace ColorPlus.Components.Operations
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddColourParameter("Color", "C", "The interpolated color", GH_ParamAccess.item);
+            pManager.AddColourParameter("Color", "C", "Resulting color", GH_ParamAccess.item);
         }
 
         /// <summary>

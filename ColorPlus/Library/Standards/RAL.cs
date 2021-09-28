@@ -1,7 +1,7 @@
 ﻿
 using System.Drawing;
 
-namespace ColorPlus
+namespace ColorPlus.Standards
 {
     public struct RAL
     {

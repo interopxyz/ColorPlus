@@ -40,7 +40,7 @@ namespace ColorPlus.Components.Conversions
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddTextParameter("Hex Text", "H", "The Hex Text value", GH_ParamAccess.item);
+            pManager.AddTextParameter("Hex", "H", "Hex string", GH_ParamAccess.item);
         }
 
         /// <summary>

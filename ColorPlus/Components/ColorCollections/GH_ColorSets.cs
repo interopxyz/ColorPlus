@@ -33,8 +33,8 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddColourParameter("Color", "C", "A color", GH_ParamAccess.item);
-            pManager.AddIntegerParameter("Mode", "M", "The grouping mode", GH_ParamAccess.item, 0);
+            pManager.AddColourParameter("Color", "C", "Input color", GH_ParamAccess.item);
+            pManager.AddIntegerParameter("Mode", "M", "The Grouping mode", GH_ParamAccess.item, 0);
             pManager[1].Optional = true;
 
             Param_Integer param = (Param_Integer)pManager[1];
@@ -49,7 +49,7 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddColourParameter("Color", "C", "The complimentary color", GH_ParamAccess.list);
+            pManager.AddColourParameter("Color", "C", "Resulting colors", GH_ParamAccess.list);
         }
 
         /// <summary>

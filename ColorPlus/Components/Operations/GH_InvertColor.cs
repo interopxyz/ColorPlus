@@ -12,7 +12,7 @@ namespace ColorPlus.Components.Operations
         /// Initializes a new instance of the GH_InvertColor class.
         /// </summary>
         public GH_InvertColor()
-          : base("GH_InvertColor", "Nickname",
+          : base("Invert Color", "Invert",
               "Invert a color",
               "Display", "Colour")
         {
@@ -31,7 +31,7 @@ namespace ColorPlus.Components.Operations
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddColourParameter("Color", "C", "The color to invert", GH_ParamAccess.item);
+            pManager.AddColourParameter("Color", "C", "Input color", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace ColorPlus.Components.Operations
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddColourParameter("Color", "C", "The inverted color", GH_ParamAccess.item);
+            pManager.AddColourParameter("Color", "C", "Resulting color", GH_ParamAccess.item);
         }
 
         /// <summary>

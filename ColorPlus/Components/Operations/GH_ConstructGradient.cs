@@ -14,7 +14,7 @@ namespace ColorPlus.Components.Operations
         /// Initializes a new instance of the GH_ConstructGradient class.
         /// </summary>
         public GH_ConstructGradient()
-          : base("GH_ConstructGradient", "Nickname",
+          : base("Construct Gradient", "ConstGrad",
               "Parametrically construct a gradient. ",
               "Display", "Colour")
         {
@@ -33,12 +33,12 @@ namespace ColorPlus.Components.Operations
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddColourParameter("Colors", "C", "A list of colors for the gradient", GH_ParamAccess.list);
-            pManager.AddNumberParameter("Parameter", "P", "A list of unitized parameters defining the position of the colors in the gradient. If this is empty, the colors will be evenly distributed across the gradient.", GH_ParamAccess.list);
+            pManager.AddColourParameter("Colors", "C", "Input Colors", GH_ParamAccess.list);
+            pManager.AddNumberParameter("Parameter", "P", "Matching unitized parameters. If empty, the colors will be evenly distributed.", GH_ParamAccess.list);
             pManager[1].Optional = true;
-            pManager.AddNumberParameter("Sample", "T", "A unitized parameter to sample between 0-1", GH_ParamAccess.item,0.5);
+            pManager.AddNumberParameter("Sample", "T", "Unitized sampling parameter 0-1", GH_ParamAccess.item,0.5);
             pManager[2].Optional = true;
-            pManager.AddIntegerParameter("Interpolation Mode", "M", "Select the gradient interpolation mode", GH_ParamAccess.item, 0);
+            pManager.AddIntegerParameter("Interpolation Mode", "M", "Gradient interpolation mode", GH_ParamAccess.item, 0);
             pManager[3].Optional = true;
 
             Param_Integer param = (Param_Integer)pManager[3];
@@ -51,7 +51,7 @@ namespace ColorPlus.Components.Operations
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddColourParameter("Color", "C", "The sampled color", GH_ParamAccess.item);
+            pManager.AddColourParameter("Color", "C", "Resulting color", GH_ParamAccess.item);
         }
 
         /// <summary>

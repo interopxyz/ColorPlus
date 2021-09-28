@@ -40,7 +40,7 @@ namespace ColorPlus.Components.Conversions
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddIntegerParameter("Integer", "I", "The Ole integer value", GH_ParamAccess.item);
+            pManager.AddIntegerParameter("Integer", "I", "Ole integer", GH_ParamAccess.item);
         }
 
         /// <summary>

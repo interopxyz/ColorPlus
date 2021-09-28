@@ -13,7 +13,7 @@ namespace ColorPlus.Components
         /// </summary>
         public GH_ColorPalettes()
           : base("Color Palettes", "Palette",
-              "Get a list of colors from premade palettes from both Windows and publically avaialable color sets.",
+              "Get a list of colors from premade palettes from Windows, common web standards, and industry color sets.",
               "Display", "Colour")
         {
         }
@@ -31,13 +31,7 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddIntegerParameter("Type", "T", "The Palette type", GH_ParamAccess.item,0);
-
-            Param_Integer param = (Param_Integer)pManager[0];
-            param.AddNamedValue("Known", 0);
-            param.AddNamedValue("System", 1);
-            param.AddNamedValue("Windows", 2);
-            param.AddNamedValue("RAL", 3);
+            base.RegisterInputParams(pManager);
         }
 
         /// <summary>
@@ -45,9 +39,8 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddTextParameter("Name", "N", "The names of the colors", GH_ParamAccess.list);
-            pManager.AddColourParameter("Color", "C", "The color values", GH_ParamAccess.list);
-            pManager.AddTextParameter("Index", "I", "The index of the colors, useful for Palettes such as RAL", GH_ParamAccess.list);
+            pManager.AddTextParameter("Name", "N", "Resulting color names", GH_ParamAccess.list);
+            pManager.AddColourParameter("Color", "C", "Resulting colors", GH_ParamAccess.list);
         }
 
         /// <summary>
@@ -57,26 +50,15 @@ namespace ColorPlus.Components
         protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index = 0;
-            if(!DA.GetData(0, ref index)) return;
-            switch (index)
-            {
-                default:
-                    GetKnownColors();
-                    break;
-                case 1:
-                    GetSystemColors();
-                    break;
-                case 2:
-                    GetDrawingColors();
-                    break;
-                case 3:
-                    GetColours(typeof(RAL));
-                    break;
-            }
-            
+            if (!DA.GetData(0, ref index)) return;
+
+            int subIndex = 0;
+            if (!DA.GetData(1, ref subIndex)) return;
+
+            GetCollectionColors(index, subIndex);
+
             DA.SetDataList(0, Names);
             DA.SetDataList(1, Colors);
-            DA.SetDataList(2, Indices);
         }
 
         /// <summary>

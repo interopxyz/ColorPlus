@@ -17,7 +17,7 @@ namespace ColorPlus.Components
         /// Initializes a new instance of the RalColors class.
         /// </summary>
         public GH_NamedColor()
-          : base("Named Color", "Named Clr",
+          : base("Named Color", "NamedClr",
               "Select a Color from existing palletes by name or index",
               "Display", "Colour")
         {
@@ -36,17 +36,10 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddTextParameter("Name or Index", "N", "The Name or Indices for indexed sets such as RAL", GH_ParamAccess.item);
-            pManager[0].Optional = true;
+            base.RegisterInputParams(pManager);
 
-            pManager.AddIntegerParameter("Type", "T", "The collection type", GH_ParamAccess.item, 0);
-            pManager[1].Optional = true;
+            pManager.AddTextParameter("Name", "N", "Name of the Color", GH_ParamAccess.item);
 
-            Param_Integer param = (Param_Integer)pManager[1];
-            param.AddNamedValue("Known", 0);
-            param.AddNamedValue("System", 1);
-            param.AddNamedValue("Windows", 2);
-            param.AddNamedValue("RAL", 3);
         }
 
         /// <summary>
@@ -54,9 +47,8 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddTextParameter("Name", "N", "The name of the color", GH_ParamAccess.item);
-            pManager.AddColourParameter("Color", "C", "The color value", GH_ParamAccess.item);
-            pManager.AddTextParameter("Index", "I", "The index of the color", GH_ParamAccess.item);
+            pManager.AddTextParameter("Name", "N", "Resulting color name", GH_ParamAccess.item);
+            pManager.AddColourParameter("Color", "C", "Resulting color", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -66,54 +58,25 @@ namespace ColorPlus.Components
         protected override void SolveInstance(IGH_DataAccess DA)
         {
             int index = 0;
-            if (!DA.GetData(1, ref index)) return;
-            switch (index)
-            {
-                default:
-                    GetKnownColors();
-                    break;
-                case 1:
-                    GetSystemColors();
-                    break;
-                case 2:
-                    GetDrawingColors();
-                    break;
-                case 3:
-                    GetColours(typeof(RAL));
-                    break;
-            }
+            if (!DA.GetData(0, ref index)) return;
 
-            string name = "1000";
-            if (DA.GetData(0, ref name))
+            int subIndex = 0;
+            if (!DA.GetData(1, ref subIndex)) return;
+
+            string name = string.Empty;
+            if (!DA.GetData(3, ref name)) return;
+
+            GetCollectionColors(index, subIndex);
+
+            if (Names.Contains(name))
             {
-                if (int.TryParse(name, out int value))
-                {
-                    if (Indices.Contains(value))
-                    {
-                        int i = Indices.IndexOf(value);
-                        DA.SetData(0, Names[i]);
-                        DA.SetData(1, Colors[i]);
-                        DA.SetData(2, Indices[i]);
-                    }
-                    else
-                    {
-                        this.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, "The color set does not contain an index of " + name);
-                    }
-                }
-                else
-                {
-                    if (Names.Contains(name))
-                    {
-                        int i = Names.IndexOf(name);
-                        DA.SetData(0, Names[i]);
-                        DA.SetData(1, Colors[i]);
-                        DA.SetData(2, Indices[i]);
-                    }
-                    else
-                    {
-                        this.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, "The color set does not contain a color named " + name);
-                    }
-                }
+                int i = Names.IndexOf(name);
+                DA.SetData(0, Names[i]);
+                DA.SetData(1, Colors[i]);
+            }
+            else
+            {
+                this.AddRuntimeMessage(GH_RuntimeMessageLevel.Warning, "The color set does not contain a color named " + name);
             }
 
         }
