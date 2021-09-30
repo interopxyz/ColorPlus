@@ -17,9 +17,10 @@ namespace ColorPlus.Components
     public class GH_PreviewColors : GH_Component
     {
         public List<Sd.Color> backgrounds = new List<Sd.Color>();
-        public int Width = 150;
+        public int Width = 100;
         public int Height = 26;
         public bool HasBorder = true;
+        public bool HasLabel = true;
 
         /// <summary>
         /// Initializes a new instance of the GH_PreviewColors class.
@@ -34,7 +35,7 @@ namespace ColorPlus.Components
         public override void CreateAttributes()
         {
             backgrounds = new List<Sd.Color>();
-            Width = 150;
+            Width = 100;
             Height = 26;
             m_attributes = new ColorsAttr_Custom(this);
         }
@@ -81,6 +82,7 @@ namespace ColorPlus.Components
             base.AppendAdditionalMenuItems(menu);
             Menu_AppendSeparator(menu);
 
+            Menu_AppendItem(menu, "Label", SetLabel, true, HasLabel);
             Menu_AppendItem(menu, "Border", SetBorder, true, HasBorder);
 
             //Width Number Picker
@@ -125,6 +127,12 @@ namespace ColorPlus.Components
 
         }
 
+        public void SetLabel(Object sender, EventArgs e)
+        {
+            HasLabel = !HasLabel;
+            this.ExpireSolution(true);
+        }
+
         public void SetBorder(Object sender, EventArgs e)
         {
             HasBorder = !HasBorder;
@@ -148,6 +156,7 @@ namespace ColorPlus.Components
             writer.SetInt32("Width", Width);
             writer.SetInt32("Height", Height);
             writer.SetBoolean("Border", HasBorder);
+            writer.SetBoolean("Label", HasLabel);
 
             return base.Write(writer);
         }
@@ -156,6 +165,7 @@ namespace ColorPlus.Components
             Width = reader.GetInt32("Width");
             Height = reader.GetInt32("Height");
             HasBorder = reader.GetBoolean("Border");
+            HasLabel = reader.GetBoolean("Label");
 
             return base.Read(reader);
         }
@@ -237,10 +247,14 @@ namespace ColorPlus.Components
 
                     for (int i = 0; i < count; i++)
                     {
-                        Sd.RectangleF fillRectangle = new Sd.RectangleF(ButtonBounds.Left, ButtonBounds.Top + i * (comp.Height - 6), ButtonBounds.Width, (comp.Height - 6));
-                        Sd.Rectangle borderRectangle = new Sd.Rectangle(ButtonBounds.Left, ButtonBounds.Top + i * (comp.Height - 6), ButtonBounds.Width, (comp.Height - 6));
+                        float x = ButtonBounds.Left;
+                        float y = ButtonBounds.Top + i * (comp.Height - 6);
+                        Color solid = comp.backgrounds[i];
 
-                        graphics.FillRectangle(new Sd.SolidBrush(comp.backgrounds[i]), fillRectangle);
+                        Sd.RectangleF fillRectangle = new Sd.RectangleF(x, y, ButtonBounds.Width, (comp.Height - 6));
+                        Sd.Rectangle borderRectangle = new Sd.Rectangle((int)x, (int)y, ButtonBounds.Width, (comp.Height - 6));
+
+                        graphics.FillRectangle(new Sd.SolidBrush(solid), fillRectangle);
 
                         if (comp.HasBorder)
                         {
@@ -248,10 +262,15 @@ namespace ColorPlus.Components
                         }
                         else
                         {
-                            graphics.DrawRectangle(new Sd.Pen(comp.backgrounds[i], 1), borderRectangle);
+                            graphics.DrawRectangle(new Sd.Pen(solid, 1), borderRectangle);
                         }
-                        
 
+                        if (comp.HasLabel) { 
+                        Color fontColor = Color.White;
+                        if (solid.GetBrightness() > 0.5) fontColor = Color.Black;
+                        Font font = new Font("Arial", (float)(comp.Height/3.0), FontStyle.Regular);
+                        graphics.DrawString(ColorTranslator.ToHtml(comp.backgrounds[i]), font, new Sd.SolidBrush(fontColor), new PointF(x, y + 3));
+                        }
                     }
                 }
                 else

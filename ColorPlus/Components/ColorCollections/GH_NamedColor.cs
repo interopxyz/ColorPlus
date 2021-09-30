@@ -64,7 +64,7 @@ namespace ColorPlus.Components
             if (!DA.GetData(1, ref subIndex)) return;
 
             string name = string.Empty;
-            if (!DA.GetData(3, ref name)) return;
+            if (!DA.GetData(2, ref name)) return;
 
             GetCollectionColors(index, subIndex);
 
