@@ -53,5 +53,13 @@ namespace ColorPlus
                 return "interopxyz@gmail.com";
             }
         }
+
+        public override string AssemblyVersion
+        {
+            get
+            {
+                return "1.1.0.0";
+            }
+        }
     }
 }
