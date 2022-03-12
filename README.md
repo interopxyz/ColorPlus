@@ -3,6 +3,9 @@ A [Grasshopper 3d](https://www.rhino3d.com/6/new/grasshopper/) Plugin that adds 
 
 [Download the Plugin at Food4Rhino](https://www.food4rhino.com/en/app/color)
 
+![definition](https://user-images.githubusercontent.com/25797596/158016354-fdcf0de5-001c-45fa-97bd-a8c9eb1feca9.png)
+
+![definition](https://user-images.githubusercontent.com/25797596/158016391-a2a7ed55-f3b0-4d20-80a8-17cb52aedefb.png)
 
 ## Components
 Grasshopper component descriptions
