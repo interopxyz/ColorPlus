@@ -1,4 +1,8 @@
 # ColorPlus
+Enhanced color tools for Grasshopper 3D.
+
+---
+
 A [Grasshopper 3d](https://www.rhino3d.com/6/new/grasshopper/) Plugin that adds a small set of tools for the creation and previewing of color palettes and makes conversion to Hex and OLE web-friendly color formats easy.
 
 [Download the Plugin at Food4Rhino](https://www.food4rhino.com/en/app/color)
