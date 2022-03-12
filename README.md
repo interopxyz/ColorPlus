@@ -36,14 +36,14 @@ Converts colors between various common color spaces
    - Flat (Preset) https://materialui.co/flatuicolors
    - Fluent (Preset) https://www.fluentcolors.com/
    - RAL (Preset) https://ral-colors.us/
-  - *Material (SubSets) https://materialui.co/colors/
-  - *Tailwind (SubSets) https://tailwindcolor.com/
-  - *D3 Categorical (SubSets) https://github.com/d3/d3-scale-chromatic
-  - *D3 Sequential Single (SubSets) https://github.com/d3/d3-scale-chromatic
-  - *D3 Sequential Multiple (SubSets) https://github.com/d3/d3-scale-chromatic
-  - *D3 Sequential Spectrum (SubSets) https://github.com/d3/d3-scale-chromatic
-  - *D3 Diverging (SubSets) https://github.com/d3/d3-scale-chromatic
-  - *D3 Cyclical (SubSets) https://github.com/d3/d3-scale-chromatic
+   - *Material (SubSets) https://materialui.co/colors/
+   - *Tailwind (SubSets) https://tailwindcolor.com/
+   - *D3 Categorical (SubSets) https://github.com/d3/d3-scale-chromatic
+   - *D3 Sequential Single (SubSets) https://github.com/d3/d3-scale-chromatic
+   - *D3 Sequential Multiple (SubSets) https://github.com/d3/d3-scale-chromatic
+   - *D3 Sequential Spectrum (SubSets) https://github.com/d3/d3-scale-chromatic
+   - *D3 Diverging (SubSets) https://github.com/d3/d3-scale-chromatic
+   - *D3 Cyclical (SubSets) https://github.com/d3/d3-scale-chromatic
 
 ## Dependencies
 
