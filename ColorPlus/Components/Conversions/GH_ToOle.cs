@@ -13,7 +13,7 @@ namespace ColorPlus.Components.Conversions
         /// </summary>
         public GH_ToOle()
           : base("To Ole", "ToOle",
-              "Gets the OLE integer of a color",
+              "Gets the Ole integer of a color",
               "Display", "Colour")
         {
         }
@@ -62,8 +62,6 @@ namespace ColorPlus.Components.Conversions
         {
             get
             {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
                 return Properties.Resources.ColorPlus_ToOle_01;
             }
         }

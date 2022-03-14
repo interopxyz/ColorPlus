@@ -39,7 +39,7 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
-            pManager.AddColourParameter("Color", "A", "Resulting color", GH_ParamAccess.item);
+            pManager.AddColourParameter("Color", "C", "Resulting color", GH_ParamAccess.item);
         }
 
         /// <summary>
@@ -62,8 +62,6 @@ namespace ColorPlus.Components
         {
             get
             {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
                 return Properties.Resources.ColorPlus_AverageColors_01;
             }
         }

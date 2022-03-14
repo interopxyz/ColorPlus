@@ -12,7 +12,7 @@ namespace ColorPlus.Components.Operations
         /// Initializes a new instance of the GH_TweenColors class.
         /// </summary>
         public GH_TweenColors()
-          : base(" Tween Colors", "TweenClr",
+          : base("Tween Colors", "TweenClr",
               "Get a tweened color between a two colors",
               "Display", "Colour")
         {
@@ -71,8 +71,6 @@ namespace ColorPlus.Components.Operations
         {
             get
             {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
                 return Properties.Resources.ColorPlus_TweenColors2_01;
             }
         }
