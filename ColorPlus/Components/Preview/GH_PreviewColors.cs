@@ -4,13 +4,8 @@ using Sd = System.Drawing;
 using Grasshopper.GUI.Canvas;
 using Grasshopper.Kernel;
 using Grasshopper.Kernel.Attributes;
-using Grasshopper.Kernel.Types;
-using Rhino.Geometry;
 using System.Windows.Forms;
 using System.Drawing;
-using Grasshopper.Kernel.Parameters;
-using Grasshopper.Kernel.Data;
-using System.Linq;
 
 namespace ColorPlus.Components
 {
@@ -32,6 +27,9 @@ namespace ColorPlus.Components
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public override void CreateAttributes()
         {
             backgrounds = new List<Sd.Color>();
@@ -53,7 +51,7 @@ namespace ColorPlus.Components
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddColourParameter("Colors", " ", "Input Colors", GH_ParamAccess.list);
+            pManager.AddColourParameter("Colors", " ", "A list of colors previewed as stacked swatches.", GH_ParamAccess.list);
             pManager[0].Optional = true;
         }
 
@@ -160,6 +158,7 @@ namespace ColorPlus.Components
 
             return base.Write(writer);
         }
+
         public override bool Read(GH_IO.Serialization.GH_IReader reader)
         {
             Width = reader.GetInt32("Width");
@@ -177,8 +176,6 @@ namespace ColorPlus.Components
         {
             get
             {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
                 return Properties.Resources.ColorPlus_Preview_01;
             }
         }
@@ -243,7 +240,6 @@ namespace ColorPlus.Components
                 int count = comp.backgrounds.Count;
                 if (count > 0)
                 {
-                    int height = (int)(comp.Height - 6);
 
                     for (int i = 0; i < count; i++)
                     {

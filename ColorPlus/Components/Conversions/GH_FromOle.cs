@@ -13,7 +13,7 @@ namespace ColorPlus.Components.Conversions
         /// </summary>
         public GH_FromOle()
           : base("From Ole", "FromOle",
-              "Get a color from its OLE integer",
+              "Get a color from its Ole integer",
               "Display", "Colour")
         {
         }
@@ -31,7 +31,7 @@ namespace ColorPlus.Components.Conversions
         /// </summary>
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
-            pManager.AddIntegerParameter("Integer", "I", "OLE integer", GH_ParamAccess.item, 255);
+            pManager.AddIntegerParameter("Integer", "I", "Ole integer", GH_ParamAccess.item, 255);
             pManager[0].Optional = true;
         }
 
@@ -64,8 +64,6 @@ namespace ColorPlus.Components.Conversions
         {
             get
             {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
                 return Properties.Resources.ColorPlus_FromOle_01;
             }
         }

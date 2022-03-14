@@ -4,8 +4,6 @@ using Sd = System.Drawing;
 using Grasshopper.GUI.Canvas;
 using Grasshopper.Kernel;
 using Grasshopper.Kernel.Attributes;
-using Grasshopper.Kernel.Types;
-using Rhino.Geometry;
 using System.Windows.Forms;
 using System.Drawing;
 using Grasshopper.Kernel.Parameters;
@@ -76,11 +74,6 @@ namespace ColorPlus.Components.Preview
             DA.GetDataList(0, colors);
             if (colors.Count == 0) colors.Add(Color.Transparent);
             backgrounds = colors;
-        }
-        protected override void AfterSolveInstance()
-        {
-            //VariableParameterMaintenance();
-            //Params.OnParametersChanged();
         }
 
         private void ClearOutputs()
@@ -220,8 +213,6 @@ namespace ColorPlus.Components.Preview
         {
             get
             {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
                 return Properties.Resources.ColorPlus_Preview_01;
             }
         }

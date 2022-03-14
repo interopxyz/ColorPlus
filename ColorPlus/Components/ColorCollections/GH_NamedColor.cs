@@ -18,7 +18,7 @@ namespace ColorPlus.Components
         /// </summary>
         public GH_NamedColor()
           : base("Named Color", "NamedClr",
-              "Select a Color from existing palletes by name or index",
+              "Select a Color from existing palettes by name or index",
               "Display", "Colour")
         {
         }
@@ -88,8 +88,6 @@ namespace ColorPlus.Components
         {
             get
             {
-                //You can add image files to your project resources and access them like this:
-                // return Resources.IconForThisComponent;
                 return Properties.Resources.ColorPlus_FromName_01;
             }
         }
