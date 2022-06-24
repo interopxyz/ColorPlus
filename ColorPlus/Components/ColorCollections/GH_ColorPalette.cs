@@ -68,7 +68,7 @@ namespace ColorPlus.Components
         {
             get
             {
-                return Properties.Resources.ColorPlus_Palette_01;
+                return Properties.Resources.CP_Palette_01;
             }
         }
 

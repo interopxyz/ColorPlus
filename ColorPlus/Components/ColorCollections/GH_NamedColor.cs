@@ -17,7 +17,7 @@ namespace ColorPlus.Components
         /// Initializes a new instance of the RalColors class.
         /// </summary>
         public GH_NamedColor()
-          : base("Named Color", "NamedClr",
+          : base("Colour Name", "Named Clr",
               "Select a Color from existing palettes by name or index",
               "Display", "Colour")
         {
@@ -88,7 +88,7 @@ namespace ColorPlus.Components
         {
             get
             {
-                return Properties.Resources.ColorPlus_FromName_01;
+                return Properties.Resources.CP_ColorName_01_01;
             }
         }
 

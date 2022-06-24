@@ -71,7 +71,7 @@ namespace ColorPlus.Components.Operations
         {
             get
             {
-                return Properties.Resources.ColorPlus_TweenColors2_01;
+                return Properties.Resources.CP_Tween_01;
             }
         }
 

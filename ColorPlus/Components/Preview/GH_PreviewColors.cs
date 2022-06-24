@@ -176,7 +176,7 @@ namespace ColorPlus.Components
         {
             get
             {
-                return Properties.Resources.ColorPlus_Preview_01;
+                return Properties.Resources.CP_PreviewColour6_01;
             }
         }
 

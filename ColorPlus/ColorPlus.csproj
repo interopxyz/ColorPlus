@@ -77,7 +77,7 @@
     <Compile Include="Components\Operations\GH_ConstructGradient.cs" />
     <Compile Include="Components\Operations\GH_InvertColor.cs" />
     <Compile Include="Components\Operations\GH_TweenColors.cs" />
-    <Compile Include="Components\ColorCollections\GH_ColorSets.cs" />
+    <Compile Include="Components\ColorCollections\GH_ColorTheory.cs" />
     <Compile Include="Components\Preview\GH_ColorPreview.cs" />
     <Compile Include="Components\Preview\GH_PreviewColors.cs" />
     <Compile Include="Library\Colour .cs" />
@@ -219,7 +219,51 @@
   <ItemGroup>
     <None Include="Resources\ColorPlus_Logo-24.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\CP-GradientC-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-ColorTheory-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-Palette-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-PreviewColor-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-GradientG-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP_AverageA-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-GradientP-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-Tween-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP_AverageB-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP_AverageC-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-ColorOle-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-ColorName-01-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-PreviewColour4-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-PreviewColour6-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CP-ColorItem-01.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

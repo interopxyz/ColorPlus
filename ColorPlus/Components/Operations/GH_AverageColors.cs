@@ -62,7 +62,7 @@ namespace ColorPlus.Components
         {
             get
             {
-                return Properties.Resources.ColorPlus_AverageColors_01;
+                return Properties.Resources.CP_AverageC_01;
             }
         }
 
