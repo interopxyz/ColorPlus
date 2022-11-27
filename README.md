@@ -1,4 +1,4 @@
-# ColorPlus
+# Color +
 Enhanced color tools for Grasshopper 3D.
 
 ---
