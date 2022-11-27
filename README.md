@@ -1,5 +1,5 @@
 # Color +
-Enhanced color tools for Grasshopper 3D.
+Extened color toolkit for Grasshopper 3D.
 
 ---
 
