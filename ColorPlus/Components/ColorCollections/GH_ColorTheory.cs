@@ -78,7 +78,7 @@ namespace ColorPlus.Components
         {
             get
             {
-                return Properties.Resources.ColorPlus_ColorSet_01;
+                return Properties.Resources.CP_ColorTheory_01;
             }
         }
 

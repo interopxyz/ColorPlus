@@ -12,7 +12,7 @@ namespace ColorPlus.Components.Conversions
         /// Initializes a new instance of the GH_FromOle class.
         /// </summary>
         public GH_FromOle()
-          : base("From Ole", "FromOle",
+          : base("Colour Ole", "Ole",
               "Get a color from its Ole integer",
               "Display", "Colour")
         {
@@ -64,7 +64,7 @@ namespace ColorPlus.Components.Conversions
         {
             get
             {
-                return Properties.Resources.ColorPlus_FromOle_01;
+                return Properties.Resources.CP_ColorOle_01;
             }
         }
 

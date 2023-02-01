@@ -118,20 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ColorPlus_AverageColors_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColorPlus_AverageColors-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ColorPlus_ColorSet_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColorPlus_ColorSet-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ColorPlus_FromName_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorPlus_FromName-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ColorPlus_FromOle_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorPlus_FromOle-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ColorPlus_Gradient_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColorPlus_Gradient-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ColorPlus_Invert_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorPlus_Invert-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,20 +130,44 @@
   <data name="ColorPlus_Logo_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorPlus_Logo-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ColorPlus_Palette_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColorPlus_Palette-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ColorPlus_Preview_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColorPlus_Preview-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ColorPlus_ToHex_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorPlus_ToHex-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ColorPlus_ToOle_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ColorPlus_ToOle-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ColorPlus_TweenColors2_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ColorPlus_TweenColors2-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CP_AverageC_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP_AverageC-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_ColorItem_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-ColorItem-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_ColorName_01_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-ColorName-01-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_ColorOle_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-ColorOle-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_ColorTheory_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-ColorTheory-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_GradientG_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-GradientG-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_GradientP_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-GradientP-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_Palette_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-Palette-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_PreviewColour4_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-PreviewColour4-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_PreviewColour6_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-PreviewColour6-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CP_Tween_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CP-Tween-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RAL_Colors" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RAL_Colors.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

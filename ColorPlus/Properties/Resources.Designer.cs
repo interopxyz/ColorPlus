@@ -63,26 +63,6 @@ namespace ColorPlus.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ColorPlus_AverageColors_01 {
-            get {
-                object obj = ResourceManager.GetObject("ColorPlus_AverageColors_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ColorPlus_ColorSet_01 {
-            get {
-                object obj = ResourceManager.GetObject("ColorPlus_ColorSet_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ColorPlus_FromName_01 {
             get {
                 object obj = ResourceManager.GetObject("ColorPlus_FromName_01", resourceCulture);
@@ -96,16 +76,6 @@ namespace ColorPlus.Properties {
         internal static System.Drawing.Bitmap ColorPlus_FromOle_01 {
             get {
                 object obj = ResourceManager.GetObject("ColorPlus_FromOle_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ColorPlus_Gradient_01 {
-            get {
-                object obj = ResourceManager.GetObject("ColorPlus_Gradient_01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,26 +103,6 @@ namespace ColorPlus.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ColorPlus_Palette_01 {
-            get {
-                object obj = ResourceManager.GetObject("ColorPlus_Palette_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ColorPlus_Preview_01 {
-            get {
-                object obj = ResourceManager.GetObject("ColorPlus_Preview_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ColorPlus_ToHex_01 {
             get {
                 object obj = ResourceManager.GetObject("ColorPlus_ToHex_01", resourceCulture);
@@ -173,9 +123,109 @@ namespace ColorPlus.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ColorPlus_TweenColors2_01 {
+        internal static System.Drawing.Bitmap CP_AverageC_01 {
             get {
-                object obj = ResourceManager.GetObject("ColorPlus_TweenColors2_01", resourceCulture);
+                object obj = ResourceManager.GetObject("CP_AverageC_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_ColorItem_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_ColorItem_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_ColorName_01_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_ColorName_01_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_ColorOle_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_ColorOle_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_ColorTheory_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_ColorTheory_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_GradientG_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_GradientG_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_GradientP_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_GradientP_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_Palette_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_Palette_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_PreviewColour4_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_PreviewColour4_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_PreviewColour6_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_PreviewColour6_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CP_Tween_01 {
+            get {
+                object obj = ResourceManager.GetObject("CP_Tween_01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

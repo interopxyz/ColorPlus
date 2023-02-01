@@ -166,7 +166,7 @@ namespace ColorPlus.Components.Operations
         {
             get
             {
-                return Properties.Resources.ColorPlus_Gradient_01;
+                return Properties.Resources.CP_GradientP_01;
             }
         }
 
