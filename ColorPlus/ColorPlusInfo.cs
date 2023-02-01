@@ -58,7 +58,7 @@ namespace ColorPlus
         {
             get
             {
-                return "1.2.0.0";
+                return "1.5.0.0";
             }
         }
     }
