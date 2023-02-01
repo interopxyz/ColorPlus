@@ -38,7 +38,8 @@ namespace ColorPlus.Components
         {
             base.RegisterInputParams(pManager);
 
-            pManager.AddTextParameter("Name", "N", "Name of the Color", GH_ParamAccess.item);
+            pManager.AddTextParameter("Name", "N", "Name of the Color", GH_ParamAccess.item,"Red");
+            pManager[2].Optional = true;
 
         }
 

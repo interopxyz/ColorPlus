@@ -35,7 +35,7 @@ namespace ColorPlus.Components.Preview
         /// </summary>
         public override GH_Exposure Exposure
         {
-            get { return GH_Exposure.quarternary; }
+            get { return GH_Exposure.hidden; }
         }
 
         public override void CreateAttributes()
