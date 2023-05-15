@@ -1,6 +1,8 @@
 # Color +
 Extened color toolkit for Grasshopper 3D.
 
+_Like Color+ [Buy me a coffee :D](http://www.buymeacoffee.com/davidmans)_
+
 ---
 
 A [Grasshopper 3d](https://www.rhino3d.com/6/new/grasshopper/) Plugin that adds a small set of tools for the creation and previewing of color palettes and makes conversion to Hex and OLE web-friendly color formats easy.
